@@ -4,8 +4,14 @@ import { VscAccount } from "react-icons/vsc";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 
-
 const Header = () => {
+  const data = [
+    {
+      id: 1,
+      name: "Home",
+      Image: "/Images/img.png" 
+    }
+  ];
   return (
    <>
    <header>
@@ -21,6 +27,19 @@ const Header = () => {
        login</div>
     </nav>
    </header>
+   <section>
+ {
+  data.map((item) => {
+    return (
+      <div
+      className=' flex justify-center items-center gap-2'
+      key={item.id}>
+        <img src={item.Image} alt="" />
+      </div>
+    );
+  })
+ }
+   </section>
    </>
   )
 }
