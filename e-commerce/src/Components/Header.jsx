@@ -1,47 +1,54 @@
-import React from 'react'
+import React from 'react';
 import { FaSearch } from "react-icons/fa";
 import { VscAccount } from "react-icons/vsc";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import ImageSlider from '../Pages/ImageSlider';
+import Sec from '../Pages/Sec';
 
-
+ 
 const Header = () => {
-  const data = [
-    {
-      id: 1,
-      name: "Home",
-      Image: "/Images/img.png" 
-    }
-  ];
-  return (
-   <>
-   <header>
-    <nav className=' bg-amber-700 w-screen flex justify-between p-3 items-center'>
-       <div>Logo</div>
-       <div className=' flex justify-center items-center gap-2 bg-blue-300 p-1 rounded-sm border-1 border-black'  >
-        <input
-        className=' outline-none ' type="text" name=" " id="" placeholder=' search'/><span><FaSearch />        </span>
-       </div>
-       <div className=' flex justify-center items-center gap-2'><MdOutlineShoppingCart />
-       Cart</div>
-       <div className=' flex justify-center items-center gap-2'> <VscAccount />
-       login</div>
-    </nav>
-   </header>
-   <section>
- {
-  data.map((item) => {
-    return (
-      <div
-      className=' flex justify-center items-center gap-2'
-      key={item.id}>
-        <img src={item.Image} alt="" />
-      </div>
-    );
-  })
- }
-   </section>
-   </>
-  )
-}
+  
 
-export default Header
+  return (
+    <>
+       <header className=' flex justify-center items-center'>
+      <nav className="bg-amber-700 w-full  flex justify-center items-center p-3 gap-30">
+        {/* Logo */}
+        <div className="text-5xl font-bold text-white">flipkart</div>
+        
+        {/* Search Bar */}
+        <div className="flex items-center gap-2 w-1/3 bg-blue-300 p-2 rounded-sm border">
+          <input
+            className="outline-none w-full p-1"
+            type="text"
+            placeholder="Search"
+          />
+          <span>
+            <FaSearch />
+          </span>
+        </div>
+
+        {/* Cart Icon */}
+        <div className="flex items-center gap-2 text-white">
+          <MdOutlineShoppingCart />
+          <span>Cart</span>
+        </div>
+
+        {/* Login Icon */}
+        <div className="flex items-center gap-2 text-white">
+          <VscAccount />
+          <span>Login</span>
+        </div>
+      </nav>
+    </header>
+    {/* sec */}
+    <Sec />
+
+{/*      <ImageSlider /> */}
+<ImageSlider /> 
+     
+    </>
+  );
+};
+
+export default Header;
